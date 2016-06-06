@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<!-- START SNIPPET: xworkSample -->
+
+<struts>
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.configuration.xml.reload" value="true"/>
+	<package name="user" namespace="/user" extends="struts-default">
+		<action name="index" class="com.black.ouc.controllers.UserController" method="index">
+			<result name="success">/view/user/index.jsp</result>
+		</action>
+		<action name="query" class="com.black.ouc.controllers.UserController" method="query">
+			<result name="success">/view/user/query.jsp</result>
+		</action>
+		<action name="logout" class="com.black.ouc.controllers.UserController" method="logout">
+			<result name="go">/view/user/logout.jsp</result>
+			<result name="success">/view/user/login.jsp</result>
+			<result name="error">/view/user/error.jsp</result>
+		</action>
+		<action name="login" class="com.black.ouc.controllers.UserController" method="login">
+			<result name="success">/view/user/login.jsp</result>
+			<result name="go">/view/user/logout.jsp</result>
+		</action>
+		<action name="editor" class="com.black.ouc.controllers.UserController" method="editor">
+			<result name="success">/view/user/editor.jsp</result>
+			<result name="error">/view/user/index.jsp</result>
+		</action>
+		<action name="register" class="com.black.ouc.controllers.UserController" method="register">
+			<result name="success">/view/user/register.jsp</result>
+			<result name="ok">/view/user/index.jsp</result>
+		</action>
+		<action name="exit" class="com.black.ouc.controllers.UserController" method="exit">
+			<result name="success">/view/user/exit.jsp</result>
+		</action>
+		<action name="mailpost" class="com.black.ouc.controllers.UserController" method="mailpost">
+			<result name="success">/view/user/mailpost.jsp</result>
+		</action>
+	</package>
+
+</struts>  
